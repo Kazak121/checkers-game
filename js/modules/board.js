@@ -22,4 +22,13 @@ export class Board {
 
     this.boardRef.appendChild(boardGrid);
   }
+
+  insertPieces(pieces, playerIndex) {
+    const coords = Object.keys(pieces);
+    coords.forEach(coord => {
+      const piece = pieces[coords];
+      piece.player = playerIndex;
+      this.setField(coord, Field.factory(piece));
+    })
+  }
 }
