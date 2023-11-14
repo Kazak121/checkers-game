@@ -15,5 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const player_1 = new Player('P1');
   const player_2 = new Player('P2');
 
+  game.addPlayer(player_1, Game.getStartingPositionForWhite());
+
   game.init();
 });

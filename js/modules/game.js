@@ -1,15 +1,15 @@
 export class Game {
-  player1_m = null;
-  player2_m = null;
+  players_m =[];
+  playersNumber_m = 2;
 
   constructor(modules) {
     this.board = modules.board;
   }
   addPlayer(player)
   {
-    if (this.player1_m == null) this.player1_m = player;
-    else if (this.player2_m == null) this.player2_m = player;
-    else throw new Error('The game already has two players.');
+    if (this.playersNumber_m <= this.players_m.length)
+      throw new Error('Too many players!');
+    this.players_m.push(player);
   }
  
 
