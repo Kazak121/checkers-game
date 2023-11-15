@@ -1,25 +1,25 @@
 import { Board } from './board.js'
 import { Printer } from '.printer.js'
 export class Game {
-  players_m =[];
-  playersNumber_m = 2;
-  #board;
+  modules_m
+  players_m = [];
+  playersMinimum_m = 0;
+  playersLimit_m = 0;
 
-  constructor(modules) {
-    this.board = modules.board;
-  }
-  addPlayer(player, pieces = [])
-  {
-    if (this.playersNumber_m <= this.players_m.length)
+  addPlayer(player) {
+    if (this.playersLimit_m <= this.players_m.length) {
       throw new Error('Too many players!');
+    }
     this.players_m.push(player);
-    const playerIndex = this.players_m.length-1;
-    this.#board.insertPieces(pieces, playerIndex);
-    return playerIndex;
   }
- 
+  
+  Init() {
+    if (this.playersMinimum_m > this.players_m.length || this.playersLimit_m < this.players_m.length) {
+      throw new Error('Players number problem!');
+    }
+  }
 
-  init() {
-    this.board.initBoard();
+  move() {
+    throw new Error('Implement this method');
   }
 }
