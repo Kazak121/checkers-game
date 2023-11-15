@@ -96,4 +96,8 @@ export class CheckersGame extends Game {
   #getActivePlayerIndex() {
     return this.#moves.length % this.players_m.length;
   }
+
+  #getLastActivePlayerIndex() {
+    return (this.#moves.length - 1) % this.players_m.length;
+  }
 }
